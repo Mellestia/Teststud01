@@ -1,0 +1,94 @@
+﻿<html>
+<head>
+<meta name="keywords" content="fim>
+<meta name="description" content="Интернет-радио">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?52"></script>
+<script type="text/javascript">
+  VK.init({apiId: 2888507, onlyWidgets: true});
+</script>
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="MobileOptimized" content="176" />
+<title>BBIT.ru</title>
+<link id="style" rel="stylesheet" type="text/css" href="css/day.css" />
+<script>
+$(document).ready(function() {
+	$(".themechanger").click(function (){
+		if ($("#style").attr("href") == "css/day.css"){
+			$("#style").attr("href", "css/night.css")
+			$(".themechanger").attr("style", "position:fixed;top:40px;left:0px;height:40px;width:40px;background-image:url(//pp.userapi.com/c639131/v639131536/13eec/hac_BU9lub4.jpg);")
+		}
+		else{
+			$("#style").attr("href", "css/day.css")
+			$(".themechanger").attr("style", "position:fixed;top:40px;left:0px;height:44px;width:27px;background-image:url(//cs4941.userapi.com/u25101455/docs/0ba9c2c4df32/27px_luna.png);")
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+    <div id="nowpl"><?include('php/nowplaying.php');?></div>
+	<div class="content">
+		<div class="header">
+			<h1>MoonCave</h1>
+		</div>
+		<div class="play">
+			<div id="jplayer"></div>
+			<div id="jp_container_1">
+				<a href="#" class="jp-mute">Mute</a>
+				<a href="#" class="jp-unmute">Unmute</a>
+				<div class="jp-play"></div>
+                                <div class="jp-pause"></div>
+				<a href="#" class="jp-volume-max">Max</a>
+				<div class="jp-volume-bar"><div class="jp-volume-bar-value"></div></div>
+			</div>
+		</div>
+		<div class="chat">
+			<a target="_blank" href="./conf.php" onclick="showPopup(this.href); return false;">Чат</a>
+		</div>
+		<div class="userplayer">
+			<a target="_blank" href="./radio.m3u">AIMP/WinAMP</a>
+		</div>
+		<div class="publ">
+			<a target="_blank" href="http://vk.com/">Vk group</a>
+		</div>
+		<div class="bronies">
+			<a target="_blank" href="http://www.bronies.ru/">Bro</a>
+		</div>
+		<div class="footer">
+			<a target="_blank" href="http://pisekot.ru/">кони цветные<a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#jplayer").jPlayer({
+				ready: function () {
+					$(this).jPlayer("setMedia", {
+						mp3: "http://mooncave.ru:8008/radio",
+						ogg: "http://mooncave.ru:8008/radioogg"
+					});
+				},
+				swfPath: "/js",
+				preload: "auto",
+				supplied: "mp3, ogg",
+				volumeBar: ".jp-volume-bar",
+				volumeBarValue: ".jp-volume-bar-value",
+				mute: ".jp-mute",
+				unmute: ".jp-unmute",
+				volumeMax: ".jp-volume-max",
+				volume: "0.4"
+			});
+		});
+	</script>
+	<div class="like"><div id="vk_like"></div></div>
+	<div class="themechanger" style="position:fixed;top:40px;left:0px;height:44px;width:27px;background-image:url(//cs4941.userapi.com/u25101455/docs/0ba9c2c4df32/27px_luna.png);"></div>
+</body>
+</html>
